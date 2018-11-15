@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="1219.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Professor" />
+      <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
+      <AnchorPane layoutX="19.0" layoutY="59.0" prefHeight="520.0" prefWidth="1051.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+         <children>
+            <TextField fx:id="nomeProfessor" layoutX="89.0" layoutY="149.0" prefHeight="27.0" prefWidth="343.0" />
+            <Separator layoutX="9.0" layoutY="113.0" prefHeight="4.0" prefWidth="422.0" />
+            <Label layoutX="89.0" layoutY="126.0" prefHeight="17.0" prefWidth="94.0" text="Nome">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="113.0" fitWidth="136.0" layoutX="7.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/avatar.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="idProfessor" disable="true" layoutX="15.0" layoutY="150.0" prefHeight="27.0" prefWidth="60.0" />
+            <Label layoutX="15.0" layoutY="126.0" prefHeight="17.0" prefWidth="94.0" text="Código">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnSalvar" layoutX="15.0" layoutY="475.0" onAction="#switchSaveProf" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" wrappingWidth="25.0" />
+               </graphic>
+            </JFXButton>
+            
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="210.0" prefHeight="20.0" prefWidth="318.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" styleClass="nav-button" text="MATUTINO" />
+            <TableView fx:id="listDisponibilidade" layoutX="14.0" layoutY="230.0" prefHeight="208.0" prefWidth="318.0">
+               <columns>
+                  <TableColumn fx:id="segunda" prefWidth="65.0" text="Segunda" />
+                  <TableColumn fx:id="terca" prefWidth="65.0" text="Terça" />
+                  <TableColumn fx:id="quarta" prefWidth="65.0" text="Quarta" />
+                  <TableColumn fx:id="quinta" prefWidth="69.0" text="Quinta" />
+                  <TableColumn fx:id="sexta" prefWidth="61.0" text="Sexta" />
+               </columns>
+            </TableView>
+            <TableView fx:id="listDisponibilidade1" layoutX="355.0" layoutY="230.0" prefHeight="208.0" prefWidth="318.0">
+               <columns>
+                  <TableColumn fx:id="segunda1" prefWidth="65.0" text="Segunda" />
+                  <TableColumn fx:id="terca1" prefWidth="65.0" text="Terça" />
+                  <TableColumn fx:id="quarta1" prefWidth="65.0" text="Quarta" />
+                  <TableColumn fx:id="quinta1" prefWidth="69.0" text="Quinta" />
+                  <TableColumn fx:id="sexta1" prefWidth="61.0" text="Sexta" />
+               </columns>
+            </TableView>
+            <TableView fx:id="listDisponibilidade2" layoutX="694.0" layoutY="230.0" prefHeight="208.0" prefWidth="318.0">
+               <columns>
+                  <TableColumn fx:id="segunda2" prefWidth="65.0" text="Segunda" />
+                  <TableColumn fx:id="terca2" prefWidth="65.0" text="Terça" />
+                  <TableColumn fx:id="quarta2" prefWidth="65.0" text="Quarta" />
+                  <TableColumn fx:id="quinta2" prefWidth="69.0" text="Quinta" />
+                  <TableColumn fx:id="sexta2" prefWidth="61.0" text="Sexta" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="355.0" layoutY="210.0" prefHeight="20.0" prefWidth="318.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" styleClass="nav-button" text="VESPERTINO" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="694.0" layoutY="210.0" prefHeight="20.0" prefWidth="318.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" styleClass="nav-button" text="NOTURNO" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

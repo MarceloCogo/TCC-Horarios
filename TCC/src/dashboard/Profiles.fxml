@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="1219.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Home" />
+      <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
+      <AnchorPane layoutX="19.0" layoutY="67.0" prefHeight="310.0" prefWidth="543.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+         <children>
+            <Separator layoutX="13.0" layoutY="45.0" prefHeight="4.0" prefWidth="244.0" />
+            <Label layoutX="65.0" layoutY="17.0" prefHeight="20.0" prefWidth="354.0" style="-fx-text-fill: #162E3B; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: left;" text="Geração de Grade de Horários - Versão 1.0" />
+            <Separator layoutX="36.0" layoutY="173.0" prefHeight="4.0" prefWidth="244.0" />
+            <Label layoutX="60.0" layoutY="54.0" prefHeight="18.0" prefWidth="344.0" text="Instituição: Universidade Federal do Espírito Santo">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="190.0" prefHeight="17.0" prefWidth="94.0" text="Notas">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="167.0" prefHeight="150.0" prefWidth="367.0" text="Ao escolher a funcionalidade &quot;Gerar Grade de Horários&quot; as demais funcionalides ficarão desabilitadas até o fim do processamento!" wrapText="true">
+               <font>
+                  <Font name="Roboto Light" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="40.0" layoutY="108.0" prefHeight="31.0" prefWidth="413.0" style="-fx-background-color: #26B99A;" text="Gerar Grade de Horários" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

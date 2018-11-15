@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="1219.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.PeriodosController">
+    <children>
+        <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Períodos" />
+      <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
+      <TableView fx:id="listPeriodos" layoutX="14.0" layoutY="69.0" prefHeight="145.0" prefWidth="651.0">
+        <columns>
+          <TableColumn fx:id="idPeriodo" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="descPeriodo" prefWidth="150.0" text="Descrição" />
+            <TableColumn fx:id="inicio" prefWidth="150.0" text="Início" />
+            <TableColumn fx:id="termino" prefWidth="150.0" text="Término" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnEditar" layoutX="14.0" layoutY="225.0" onAction="#switchEditPeriodo" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #F39C12;" text="Editar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" wrappingWidth="25.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnExcluir" layoutX="182.0" layoutY="225.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Excluir" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnAdicionar" layoutX="516.0" layoutY="16.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
+         </graphic>
+      </JFXButton>
+    </children>
+</AnchorPane>
