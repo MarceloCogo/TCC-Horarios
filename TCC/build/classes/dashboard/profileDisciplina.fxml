@@ -52,7 +52,13 @@
                   <Font name="Roboto Medium" size="14.0" />
                </font>
             </Label>
-            <ComboBox fx:id="idCurso" layoutX="260.0" layoutY="123.0" prefWidth="150.0" />
+            <ComboBox fx:id="idCurso" layoutX="260.0" layoutY="123.0" prefHeight="27.0" prefWidth="239.0" />
+            <Label layoutX="519.0" layoutY="96.0" prefHeight="18.0" prefWidth="87.0" text="Período">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="idCurso1" layoutX="519.0" layoutY="124.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
     </children>

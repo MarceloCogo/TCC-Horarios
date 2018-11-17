@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
@@ -8,17 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="1219.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="dashboard.LocaisController">
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.LocaisController">
     <children>
-        <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Curso" />
+        <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Sala" />
       <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
-      <TableView fx:id="listCursos" layoutX="14.0" layoutY="66.0" prefHeight="145.0" prefWidth="651.0">
+      <TableView fx:id="listSalas" layoutX="14.0" layoutY="66.0" prefHeight="532.0" prefWidth="652.0">
         <columns>
-          <TableColumn fx:id="idCurso" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="nomeCurso" prefWidth="574.9999694824219" text="Nome" />
+          <TableColumn fx:id="idSala" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="nome" prefWidth="574.9999694824219" text="Nome" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnEditar" layoutX="14.0" layoutY="222.0" onAction="#switchEditCurso" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #F39C12;" text="Editar" textFill="WHITE">
+      <JFXButton fx:id="btnEditar" layoutX="15.0" layoutY="603.0" onAction="#switchEditSala" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #F39C12;" text="Editar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -26,7 +27,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnExcluir" layoutX="182.0" layoutY="222.0" onAction="#deleteCurso" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Excluir" textFill="WHITE">
+      <JFXButton fx:id="btnExcluir" layoutX="183.0" layoutY="603.0" onAction="#deleteSala" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Excluir" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -34,7 +35,15 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnAdicionar" layoutX="516.0" layoutY="16.0" onAction="#switchNewCurso" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
+      <JFXButton fx:id="btnAdicionar" layoutX="516.0" layoutY="16.0" onAction="#switchNewSala" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnExcluir1" layoutX="354.0" layoutY="603.0" onAction="#switchVisualizarAulas" prefHeight="31.0" prefWidth="311.0" style="-fx-background-color: #0000FF;" text="Visualizar Aulas" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

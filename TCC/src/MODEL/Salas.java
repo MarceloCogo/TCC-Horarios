@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Salas.findAll", query = "SELECT s FROM Salas s")
-    , @NamedQuery(name = "Salas.findByIdsalas", query = "SELECT s FROM Salas s WHERE s.idsalas = :idsalas")
+    , @NamedQuery(name = "Salas.findByIdsala", query = "SELECT s FROM Salas s WHERE s.idsala = :idsala")
     , @NamedQuery(name = "Salas.findByNome", query = "SELECT s FROM Salas s WHERE s.nome = :nome")})
 public class Salas implements Serializable {
 
@@ -36,8 +36,8 @@ public class Salas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idsalas")
-    private Integer idsalas;
+    @Column(name = "idsala")
+    private Integer idsala;
     @Column(name = "nome")
     private String nome;
     @JoinColumn(name = "turmas_ID_TURMA", referencedColumnName = "ID_TURMA")
@@ -47,16 +47,16 @@ public class Salas implements Serializable {
     public Salas() {
     }
 
-    public Salas(Integer idsalas) {
-        this.idsalas = idsalas;
+    public Salas(Integer idsala) {
+        this.idsala = idsala;
     }
 
-    public Integer getIdsalas() {
-        return idsalas;
+    public Integer getIdsala() {
+        return idsala;
     }
 
-    public void setIdsalas(Integer idsalas) {
-        this.idsalas = idsalas;
+    public void setIdsala(Integer idsala) {
+        this.idsala = idsala;
     }
 
     public String getNome() {
@@ -78,7 +78,7 @@ public class Salas implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idsalas != null ? idsalas.hashCode() : 0);
+        hash += (idsala != null ? idsala.hashCode() : 0);
         return hash;
     }
 
@@ -89,7 +89,7 @@ public class Salas implements Serializable {
             return false;
         }
         Salas other = (Salas) object;
-        if ((this.idsalas == null && other.idsalas != null) || (this.idsalas != null && !this.idsalas.equals(other.idsalas))) {
+        if ((this.idsala == null && other.idsala != null) || (this.idsala != null && !this.idsala.equals(other.idsala))) {
             return false;
         }
         return true;
@@ -97,7 +97,7 @@ public class Salas implements Serializable {
 
     @Override
     public String toString() {
-        return "MODEL.Salas[ idsalas=" + idsalas + " ]";
+        return "MODEL.Salas[ idsala=" + idsala + " ]";
     }
     
 }

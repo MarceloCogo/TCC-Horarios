@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,15 +15,15 @@
     <children>
         <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Períodos" />
       <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
-      <TableView fx:id="listPeriodos" layoutX="14.0" layoutY="69.0" prefHeight="145.0" prefWidth="651.0">
+      <TableView fx:id="listPeriodos" layoutX="19.0" layoutY="124.0" prefHeight="145.0" prefWidth="649.0">
         <columns>
           <TableColumn fx:id="idPeriodo" prefWidth="75.0" text="Código" />
-          <TableColumn fx:id="descPeriodo" prefWidth="150.0" text="Descrição" />
-            <TableColumn fx:id="inicio" prefWidth="150.0" text="Início" />
-            <TableColumn fx:id="termino" prefWidth="150.0" text="Término" />
+          <TableColumn fx:id="periodo" prefWidth="82.99996948242188" text="Periodo" />
+            <TableColumn fx:id="semestre" prefWidth="147.0" text="Semestre" />
+            <TableColumn fx:id="nomeCurso" prefWidth="342.0" text="Curso" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnEditar" layoutX="14.0" layoutY="225.0" onAction="#switchEditPeriodo" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #F39C12;" text="Editar" textFill="WHITE">
+      <JFXButton fx:id="btnEditar" layoutX="19.0" layoutY="288.0" onAction="#switchEditPeriodo" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #F39C12;" text="Editar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -29,7 +31,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnExcluir" layoutX="182.0" layoutY="225.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Excluir" textFill="WHITE">
+      <JFXButton fx:id="btnExcluir" layoutX="187.0" layoutY="288.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Excluir" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -37,7 +39,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnAdicionar" layoutX="516.0" layoutY="16.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
+      <JFXButton fx:id="btnAdicionar" onAction="#switchNewPeriodo" layoutX="516.0" layoutY="16.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -45,5 +47,14 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
+      <Label layoutX="29.0" layoutY="87.0" text="Curso:" />
+      <JFXComboBox fx:id="cursosComboBox" layoutX="84.0" layoutY="82.0" prefHeight="27.0" prefWidth="235.0" />
+      <JFXButton fx:id="btnPesquisar" layoutX="526.0" layoutY="80.0" onAction="#pesquisar" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #26B88C;" text="Pesquisar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="327.0" layoutY="87.0" prefHeight="17.0" prefWidth="68.0" text="Semestre:" />
+      <TextField fx:id="semestreFiltro" layoutX="395.0" layoutY="82.0" prefHeight="27.0" prefWidth="81.0" />
     </children>
 </AnchorPane>

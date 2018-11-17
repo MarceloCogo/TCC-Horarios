@@ -5,8 +5,8 @@
  */
 package dashboard;
 
-import MODEL.Cursos;
-import SERVICE.CursosService;
+import MODEL.Salas;
+import SERVICE.SalasService;
 import com.jfoenix.controls.JFXButton;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,13 +40,13 @@ public class LocaisController implements Initializable {
     
     
     @FXML
-    private TableView<Cursos> listCursos;
+    private TableView<Salas> listSalas;
 
     @FXML
-    private TableColumn<Cursos, Integer> idCurso;
+    private TableColumn<Salas, Integer> idSala;
 
     @FXML
-    private TableColumn<Cursos, String> nomeCurso;
+    private TableColumn<Salas, String> nome;
 
     @FXML
     private JFXButton btnEditar;
@@ -57,26 +58,26 @@ public class LocaisController implements Initializable {
     private JFXButton btnAdicionar;
     
     
-    CursosService service = new CursosService();
+    SalasService service = new SalasService();
 
-    AnchorPane profileCurso;
+    AnchorPane profileSala;
 
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("tcc");
     EntityManager em = factory.createEntityManager();
     
     
     @FXML
-    void deleteCurso(ActionEvent event) {
+    void deleteSala(ActionEvent event) {
 
     }
 
     @FXML
-    void switchEditCurso(ActionEvent event) {
+    void switchEditSala(ActionEvent event) {
 
     }
 
     @FXML
-    void switchNewCurso(ActionEvent event) {
+    void switchNewSala(ActionEvent event) {
 
     }
     
@@ -87,16 +88,16 @@ public class LocaisController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        idCurso.setCellValueFactory(
-                new PropertyValueFactory<>("idCurso"));
-        nomeCurso.setCellValueFactory(
-                new PropertyValueFactory<>("nomeCurso"));
+        idSala.setCellValueFactory(
+                new PropertyValueFactory<>("idsala"));
+        nome.setCellValueFactory(
+                new PropertyValueFactory<>("nome"));
         
         //getCursos();
 
-        listCursos.setItems(listaCursos());
+        listSalas.setItems(listaSalas());
         
-       if (listCursos.getItems().isEmpty()){
+       if (listSalas.getItems().isEmpty()){
            btnEditar.setDisable(true);
            btnExcluir.setDisable(true);
        }else{
@@ -109,17 +110,17 @@ public class LocaisController implements Initializable {
     
     private void refresh() {
         
-        listCursos.getItems().clear();
-        listCursos.getColumns().get(0).setVisible(false);
-        listCursos.getColumns().get(0).setVisible(true);
-        listCursos.getItems().addAll(listaCursos());
-        listCursos.setItems(listaCursos());
-        listCursos.refresh();
+        listSalas.getItems().clear();
+        listSalas.getColumns().get(0).setVisible(false);
+        listSalas.getColumns().get(0).setVisible(true);
+        listSalas.getItems().addAll(listaSalas());
+        listSalas.setItems(listaSalas());
+        listSalas.refresh();
         
 
         //System.out.println(lista);
         
-        if (listCursos.getItems().isEmpty()){
+        if (listSalas.getItems().isEmpty()){
            btnEditar.setDisable(true);
            btnExcluir.setDisable(true);
        }else{
@@ -131,9 +132,9 @@ public class LocaisController implements Initializable {
 
     }
 
-    private ObservableList<Cursos> listaCursos() {
+    private ObservableList<Salas> listaSalas() {
 
-        List<Cursos> lista = new ArrayList<>();
+        List<Salas> lista = new ArrayList<>();
 
         lista = listar();
         
@@ -142,25 +143,34 @@ public class LocaisController implements Initializable {
         );
     }
 
-    public List<Cursos> listar() {
+    public List<Salas> listar() {
 
         return service.listar();
-    } 
+    }
+    
+    
 
     @FXML
-    private void switchEditCurso(javafx.event.ActionEvent event) throws IOException {
+    private void switchVisualizarAulas(javafx.event.ActionEvent event) throws IOException {
+     //Application. launch(JavaFXCSVTableView.class);
+     String[] arguments = new String[] {""};
+     JavaFXCSVTableView.main(arguments);
+    }
+    
+    @FXML
+    private void switchEditSala(javafx.event.ActionEvent event) throws IOException {
         createDatabaseItemModificationStage();
     }
 
     @FXML
-    private void switchNewCurso(javafx.event.ActionEvent event) throws IOException {
+    private void switchNewSala(javafx.event.ActionEvent event) throws IOException {
         createDatabaseItemNewStage();
     }
 
-    public void deleteCurso() {
+    public void deleteSala() {
 
-        Integer idCurso = listCursos.getSelectionModel().getSelectedItem().getIdCurso();
-        service.deleteCurso(idCurso);
+        Integer idSala = listSalas.getSelectionModel().getSelectedItem().getIdsala();
+        service.deleteSala(idSala);
 
         refresh();
 
@@ -168,12 +178,12 @@ public class LocaisController implements Initializable {
 
     private void createDatabaseItemModificationStage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("profileCurso.fxml"));
-            Integer idCurso = listCursos.getSelectionModel().getSelectedItem().getIdCurso();
-            ProfileCursoController controller = new ProfileCursoController(idCurso);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("profileSala.fxml"));
+            Integer idSala = listSalas.getSelectionModel().getSelectedItem().getIdsala();
+            ProfileSalaController controller = new ProfileSalaController(idSala);
             loader.setController(controller);
             Stage newStage = new Stage();
-            newStage.setTitle("cadCurso");
+            newStage.setTitle("cadSala");
             newStage.setScene(new Scene(loader.load()));
             newStage.initModality(Modality.APPLICATION_MODAL);
             newStage.show();
@@ -191,11 +201,11 @@ public class LocaisController implements Initializable {
 
     private void createDatabaseItemNewStage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("profileCurso.fxml"));
-            ProfileCursoController controller = new ProfileCursoController(null);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("profileSala.fxml"));
+            ProfileSalaController controller = new ProfileSalaController(null);
             loader.setController(controller);
             Stage newStage = new Stage();
-            newStage.setTitle("Cadastro de Cursos");
+            newStage.setTitle("Cadastro de Salas");
             newStage.setScene(new Scene(loader.load()));
             newStage.initModality(Modality.APPLICATION_MODAL);
             newStage.show();

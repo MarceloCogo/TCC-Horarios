@@ -29,6 +29,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Periodos.findByIdPeriodo", query = "SELECT p FROM Periodos p WHERE p.idPeriodo = :idPeriodo"),
     @NamedQuery(name = "Periodos.findBySemestre", query = "SELECT p FROM Periodos p WHERE p.semestre = :semestre")})
 public class Periodos implements Serializable {
+
+    @Basic(optional = false)
+    @Column(name = "PERIODO")
+    private String periodo;
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -41,6 +45,10 @@ public class Periodos implements Serializable {
     private Cursos idCurso;
 
     public Periodos() {
+    }
+    
+    public String getNomeCurso() {
+        return idCurso.getNomeCurso();
     }
 
     public Periodos(Integer idPeriodo) {
@@ -94,6 +102,14 @@ public class Periodos implements Serializable {
     @Override
     public String toString() {
         return "DAO.Periodos[ idPeriodo=" + idPeriodo + " ]";
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
     
 }
