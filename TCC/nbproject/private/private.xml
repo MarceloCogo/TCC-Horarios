@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/DisciplinasController.java</file>
-            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/SERVICE/PeriodosService.java</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/ProfileSalaController.java</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/Turmas.fxml</file>
             <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/CadPeriodoController.java</file>
-            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/PeriodosController.java</file>
-            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/SERVICE/DisciplinasService.java</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/SERVICE/PeriodosService.java</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/FXMLDocumentController.java</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/cadPeriodo.fxml</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/controlesFx.fxml</file>
+            <file>file:/Users/marcelocogo/NetBeansProjects/TCC/src/dashboard/profileDisciplina.fxml</file>
         </group>
     </open-files>
 </project-private>

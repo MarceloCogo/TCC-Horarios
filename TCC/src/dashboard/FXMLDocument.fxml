@@ -76,7 +76,7 @@
                         <MaterialDesignIconView fill="#a1aec4" glyphName="VIEW_GRID" size="17.0" wrappingWidth="42.99997329711914" />
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnProfile" layoutX="10.0" layoutY="193.0" onAction="#switchProfile" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Turmas" textFill="#a1aec4">
+                <JFXButton fx:id="btnProfile" layoutX="10.0" layoutY="193.0" onAction="#switchTurmas" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Turmas" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>

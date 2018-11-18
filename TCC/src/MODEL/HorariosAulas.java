@@ -34,6 +34,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "HorariosAulas.findByTurno", query = "SELECT h FROM HorariosAulas h WHERE h.turno = :turno"),
     @NamedQuery(name = "HorariosAulas.findByAula", query = "SELECT h FROM HorariosAulas h WHERE h.horariosAulasPK.aula = :aula")})
 public class HorariosAulas implements Serializable {
+
+    @JoinColumn(name = "salas_idsala", referencedColumnName = "idsala")
+    @ManyToOne(optional = false)
+    private Salas salasIdsala;
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected HorariosAulasPK horariosAulasPK;
@@ -154,6 +158,14 @@ public class HorariosAulas implements Serializable {
     @Override
     public String toString() {
         return "DAO.HorariosAulas[ horariosAulasPK=" + horariosAulasPK + " ]";
+    }
+
+    public Salas getSalasIdsala() {
+        return salasIdsala;
+    }
+
+    public void setSalasIdsala(Salas salasIdsala) {
+        this.salasIdsala = salasIdsala;
     }
     
 }

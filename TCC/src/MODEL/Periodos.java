@@ -6,7 +6,9 @@
 package MODEL;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,8 +16,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -29,6 +33,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Periodos.findByIdPeriodo", query = "SELECT p FROM Periodos p WHERE p.idPeriodo = :idPeriodo"),
     @NamedQuery(name = "Periodos.findBySemestre", query = "SELECT p FROM Periodos p WHERE p.semestre = :semestre")})
 public class Periodos implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "periodosIDPERIODO")
+    private Collection<Turmas> turmasCollection;
 
     @Basic(optional = false)
     @Column(name = "PERIODO")
@@ -110,6 +117,15 @@ public class Periodos implements Serializable {
 
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
+    }
+
+    @XmlTransient
+    public Collection<Turmas> getTurmasCollection() {
+        return turmasCollection;
+    }
+
+    public void setTurmasCollection(Collection<Turmas> turmasCollection) {
+        this.turmasCollection = turmasCollection;
     }
     
 }

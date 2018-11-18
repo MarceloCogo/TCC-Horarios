@@ -44,7 +44,7 @@ public class FXMLDocumentController implements Initializable {
     private JFXButton btnControls;
 
     AnchorPane home,contacts, alerts, locais, periodos, professores, profiles, widgets, 
-            controls, profileProfessor, disciplinas, cursos;
+            controls, turmas, profileProfessor, disciplinas, cursos;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,6 +55,7 @@ public class FXMLDocumentController implements Initializable {
             locais = FXMLLoader.load(getClass().getResource("Locais.fxml"));
             periodos = FXMLLoader.load(getClass().getResource("Periodos.fxml"));
             professores = FXMLLoader.load(getClass().getResource("Professores.fxml"));
+            turmas = FXMLLoader.load(getClass().getResource("Turmas.fxml"));
             //pricing = FXMLLoader.load(getClass().getResource("Pricing.fxml"));
             profiles = FXMLLoader.load(getClass().getResource("Profiles.fxml"));
             home = FXMLLoader.load(getClass().getResource("Profiles.fxml"));
@@ -126,6 +127,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void switchLocais(ActionEvent event) {
         setNode(locais);
+    }
+    
+    @FXML
+    private void switchTurmas(ActionEvent event) {
+        setNode(turmas);
     }
 
     @FXML

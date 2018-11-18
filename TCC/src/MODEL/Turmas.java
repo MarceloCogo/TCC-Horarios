@@ -31,8 +31,17 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Turmas.findAll", query = "SELECT t FROM Turmas t"),
     @NamedQuery(name = "Turmas.findByIdTurma", query = "SELECT t FROM Turmas t WHERE t.idTurma = :idTurma"),
-    @NamedQuery(name = "Turmas.findByTurno", query = "SELECT t FROM Turmas t WHERE t.turno = :turno")})
+    @NamedQuery(name = "Turmas.findByTurno", query = "SELECT t FROM Turmas t WHERE t.turno = :turno"),
+    @NamedQuery(name = "Turmas.findByCurso", query = "SELECT t FROM Turmas t WHERE t.idCurso = :idCurso")})
 public class Turmas implements Serializable {
+
+    @Basic(optional = false)
+    @Column(name = "NOME")
+    private String nome;
+
+    @JoinColumn(name = "periodos_ID_PERIODO", referencedColumnName = "ID_PERIODO")
+    @ManyToOne(optional = false)
+    private Periodos periodosIDPERIODO;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "turmasIDTURMA")
     private Collection<Salas> salasCollection;
@@ -48,6 +57,18 @@ public class Turmas implements Serializable {
     private Cursos idCurso;
 
     public Turmas() {
+    }
+    
+    public String getNomeCurso() {
+        return idCurso.getNomeCurso();
+    }
+    
+    public String getNomePeriodo() {
+        return periodosIDPERIODO.getPeriodo();
+    }
+    
+    public String getNomeSemestre() {
+        return periodosIDPERIODO.getSemestre();
     }
 
     public Turmas(Integer idTurma) {
@@ -110,6 +131,22 @@ public class Turmas implements Serializable {
 
     public void setSalasCollection(Collection<Salas> salasCollection) {
         this.salasCollection = salasCollection;
+    }
+
+    public Periodos getPeriodosIDPERIODO() {
+        return periodosIDPERIODO;
+    }
+
+    public void setPeriodosIDPERIODO(Periodos periodosIDPERIODO) {
+        this.periodosIDPERIODO = periodosIDPERIODO;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
 }

@@ -6,7 +6,9 @@
 package MODEL;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +18,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -32,6 +36,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Salas.findByNome", query = "SELECT s FROM Salas s WHERE s.nome = :nome")})
 public class Salas implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "turmas_ID_TURMA")
+    private int turmasIDTURMA;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "salasIdsala")
+    private Collection<HorariosAulas> horariosAulasCollection;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,9 +50,7 @@ public class Salas implements Serializable {
     private Integer idsala;
     @Column(name = "nome")
     private String nome;
-    @JoinColumn(name = "turmas_ID_TURMA", referencedColumnName = "ID_TURMA")
-    @ManyToOne(optional = false)
-    private Turmas turmasIDTURMA;
+
 
     public Salas() {
     }
@@ -67,13 +75,7 @@ public class Salas implements Serializable {
         this.nome = nome;
     }
 
-    public Turmas getTurmasIDTURMA() {
-        return turmasIDTURMA;
-    }
-
-    public void setTurmasIDTURMA(Turmas turmasIDTURMA) {
-        this.turmasIDTURMA = turmasIDTURMA;
-    }
+    
 
     @Override
     public int hashCode() {
@@ -98,6 +100,23 @@ public class Salas implements Serializable {
     @Override
     public String toString() {
         return "MODEL.Salas[ idsala=" + idsala + " ]";
+    }
+
+    public int getTurmasIDTURMA() {
+        return turmasIDTURMA;
+    }
+
+    public void setTurmasIDTURMA(int turmasIDTURMA) {
+        this.turmasIDTURMA = turmasIDTURMA;
+    }
+
+    @XmlTransient
+    public Collection<HorariosAulas> getHorariosAulasCollection() {
+        return horariosAulasCollection;
+    }
+
+    public void setHorariosAulasCollection(Collection<HorariosAulas> horariosAulasCollection) {
+        this.horariosAulasCollection = horariosAulasCollection;
     }
     
 }

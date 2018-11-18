@@ -39,7 +39,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnAdicionar" onAction="#switchNewPeriodo" layoutX="516.0" layoutY="16.0" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
+      <JFXButton fx:id="btnAdicionar" layoutX="516.0" layoutY="16.0" onAction="#switchNewPeriodo" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #26B99A;" text="Adicionar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -49,7 +49,7 @@
       </JFXButton>
       <Label layoutX="29.0" layoutY="87.0" text="Curso:" />
       <JFXComboBox fx:id="cursosComboBox" layoutX="84.0" layoutY="82.0" prefHeight="27.0" prefWidth="235.0" />
-      <JFXButton fx:id="btnPesquisar" layoutX="526.0" layoutY="80.0" onAction="#pesquisar" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #26B88C;" text="Pesquisar" textFill="WHITE">
+      <JFXButton fx:id="btnPesquisar" layoutX="516.0" layoutY="80.0" onAction="#pesquisar" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #26B88C;" text="Pesquisar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -40,6 +40,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Disciplinas.findByDISCIPLINAScol", query = "SELECT d FROM Disciplinas d WHERE d.dISCIPLINAScol = :dISCIPLINAScol"),
     @NamedQuery(name = "Disciplinas.findByIdCurso", query="SELECT d FROM Disciplinas d WHERE d.idCurso = :idCurso")})
 public class Disciplinas implements Serializable {
+
+    @Column(name = "idCurso")
+    private Integer idCurso;
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
@@ -60,7 +63,6 @@ public class Disciplinas implements Serializable {
     private Cursos cursosIdCurso;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idDisciplina")
     private Collection<HorariosAulas> horariosAulasCollection;
-    private Integer idCurso;
 
     public Disciplinas() {
     }
